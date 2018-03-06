@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login</title>
-	<link rel="stylesheet" href="css/reset.css">
+	<!-- <link rel="stylesheet" href="css/reset.css"> -->
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/login/login.css">
 </head>
@@ -27,17 +27,25 @@
 	</header>
 
 	<main>
-		<form>
-			<label for="email">
-				Email:
-			</label>
-			<input type="email" id="email" name="email" placeholder="Enter your email">
-
-			<label for="password">
-				Password:
-			</label>
-			<input type="password" id="password" name="password" placeholder="Enter your password">
-		</form>
+		<div class="signin-box">
+			<h2>Login</h2>
+			<form>
+				<div class="inputBox">
+					<label for="email">
+						Email:
+					</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				
+				<div class="inputBox">
+					<label for="password">
+						Password:
+					</label>
+					<input type="password" id="password" name="password" required>
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
 	</main>
 
 	<footer>

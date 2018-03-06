@@ -1,4 +1,74 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 body {
-	
+	font: 16px 'Quicksand', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+/* Header Section */
+header {
+	display: flex;
+	justify-content: center;
+	background: #68d;
+	opacity: 0.8;
+	min-height: 40px;
+}
+
+header nav {
+	display: flex;
+	justify-content: space-around;
+	align-self: center;
+	/*width: 300px;*/
+}
+
+header nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+header nav ul li:nth-child(2) {
+	margin-right: 0;
+}
+
+/* Main Section(Form) */
+main {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	margin-top: 10rem;
+	padding-bottom: 30rem;
+}
+
+main .signin-box {
+	color: #fff;
+	width: 300px;
+	text-align: center;
+	background: #000;
+	opacity: .5;
+}
+
+main .signin-box form {
+	padding: 2rem;
+}
+
+main .signin-box form .inputBox {
+	margin-bottom: 1rem;
+}
+
+main .signin-box form .inputBox label {
+	display: block;
+}
+
+main .signin-box form .inputBox input {
+	padding: .25rem;
+}
+
+/* Footer Section */
+
+footer {
+	text-align: center;
 }
