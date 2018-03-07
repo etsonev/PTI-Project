@@ -6,7 +6,6 @@
 	<title>Register</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/register/register.css">
 </head>
 <body>
 	<header>
@@ -26,35 +25,42 @@
 		</nav>
 	</header>
 
+	<div class="landing-video">
+		<video autoplay loop muted>
+			<source src="./videos/bg-video2.mov">
+		</video>
+	</div>
+
 	<main>
 		<div class="signin-box">
+			<h2>Register</h2>
 			<form>
 				<div class="inputBox">
 					<label for="name">
 						Name:
 					</label>
-					<input type="text" id="name" name="name" placeholder="Enter your name">
+					<input type="text" id="name" name="name" required>
 				</div>
 				
 				<div class="inputBox">
 					<label for="email">
 						Email:
 					</label>
-					<input type="email" id="name" name="email" placeholder="Enter your email">
+					<input type="email" id="name" name="email" required>
 				</div>
 				
 				<div class="inputBox">
 					<label for="faculty-number">
-						Faculty Number
+						Faculty Number:
 					</label>
-					<input type="text" id="faculty-number" name="faculty-number" placeholder="Enter your faculty number">
+					<input type="text" id="faculty-number" name="faculty-number" required>
 				</div>
 
 				<div class="inputBox">
 					<label for="password">
 						Password:
 					</label>
-					<input type="password" id="password" name="password" placeholder="Enter your password">
+					<input type="password" id="password" name="password" required>
 				</div>
 				
 				<input type="submit" value="Submit">
@@ -65,5 +71,6 @@
 	<footer>
 		<p>Copyright &copy;Emil Tsonev 2018</p>
 	</footer>
+	<script src="js/validate.js"></script>
 </body>
 </html>
