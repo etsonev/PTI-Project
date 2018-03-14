@@ -42,3 +42,29 @@ passwordEl.addEventListener('input', e => {
 	};
 	validateInput(e.target, [atleast8CharsPass, atleastOneDigit]);
 });
+
+let emailEl = document.getElementById('email');
+emailEl.addEventListener('input', e => {
+	let validEmail = email => {
+		if(email.search(/.+\@.+\..+/) === -1) {
+			addError(e.target, 'Invalid email structure')
+		}
+	}
+	validateInput(e.target, [validEmail]);
+});
+
+let facultyNumberEl = document.getElementById('faculty-number');
+facultyNumberEl.addEventListener('input', e => {
+	let fnOnlyNumbers = fn => {
+		if(fn.search(/^\d+$/) === -1) {
+			addError(e.target, 'Faculty Number must contain only numbers');
+		}
+	}
+
+	let validFacultyNumber = fn => {
+		if(fn.length > 8) {
+			addError(e.target, 'Invalid faculty number.It must be atleast 8 chars');
+		}
+	}
+	validateInput(e.target, [fnOnlyNumbers, validFacultyNumber]);
+});
