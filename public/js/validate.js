@@ -68,3 +68,41 @@ facultyNumberEl.addEventListener('input', e => {
 	}
 	validateInput(e.target, [fnOnlyNumbers, validFacultyNumber]);
 });
+
+const submitBtn = document.querySelector('form input[type="submit"]');
+
+const formHasErrors = (form) => {
+	const inputs = form.querySelectorAll('.inputBox');
+	let hasErrors = false;
+	inputs.forEach(inputBox => {
+		if(inputBox.querySelector('.error-container')) {
+			hasErrors = true;
+		}
+	});
+	return hasErrors;
+}
+
+const addSubmitMessage = msg => {
+	const body = document.querySelector('body');
+	const header = document.querySelector('header');
+	const submitLabel = document.createElement('div');
+	const submitText = document.createElement('p');
+	const submitMsg = document.createTextNode(msg);
+	submitText.appendChild(submitMsg);
+	submitLabel.appendChild(submitText);
+	submitLabel.classList.add('submit-label');
+	submitLabel.classList.add('label-error');
+	
+	body.appendChild(submitLabel);
+	submitLabel.addEventListener('click', () => {
+		body.removeChild(submitLabel);
+	});
+};
+
+submitBtn.addEventListener('click', e => {
+	e.preventDefault();
+	if(formHasErrors(e.target.parentNode)) {
+		addSubmitMessage('You have errors on the input');
+	}
+});
+

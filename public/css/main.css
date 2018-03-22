@@ -10,6 +10,21 @@ a {
 	color: #000;
 }
 
+.submit-label {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	text-align: center;
+	color: #fff;
+	width: 100%;
+	padding: .5rem;
+	opacity: 0.7;
+}
+
+.label-error {
+	background: #cc1a1a;
+}
+
 .landing-video {
 	position: absolute;
 	  top: 0;
