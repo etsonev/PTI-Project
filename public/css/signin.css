@@ -1,0 +1,86 @@
+.submit-label {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: .5rem;
+    opacity: 0.7;
+}
+
+.label-error {
+    background: #cc1a1a;
+}
+
+.landing-video {
+    position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+}
+
+video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+
+/* Header */
+header nav ul li:nth-child(2) {
+    margin-right: 0;
+}
+
+
+/* Main Section */
+
+
+main .signin-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: 300px;
+    text-align: center;
+    background: #000;
+    opacity: .5;
+}
+
+main .signin-box h2 {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 1rem;
+}
+
+main .signin-box form {
+    padding: 2rem;
+}
+
+main .signin-box form input[type="submit"] {
+    padding: .5rem;
+    font-size: 16px;
+}
+
+main .signin-box form .inputBox {
+    margin-bottom: 1rem;
+}
+
+main .signin-box form .inputBox label {
+    display: block;
+}
+
+main .signin-box form .inputBox input {
+    padding: .25rem;
+}

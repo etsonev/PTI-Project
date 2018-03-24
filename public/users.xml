@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE users [
+<!ELEMENT users (user*)> <!--zero or more declarations for a user tag -->
+<!ELEMENT user (email,password,name,facnumber)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+]>
+<users>
+    <user>
+        <email>emil@example.com</email>
+        <password>test123456</password>
+        <facnumber>123456</facnumber>
+		<name>Emil</name>
+    </user>
+    <user>
+        <email>valentina@example.com</email>
+        <password>654321tset</password>
+        <facnumber>4673456</facnumber>
+		<name>Valentina</name>
+    </user>
+</users>

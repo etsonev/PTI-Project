@@ -92,17 +92,48 @@ const addSubmitMessage = msg => {
 	submitLabel.appendChild(submitText);
 	submitLabel.classList.add('submit-label');
 	submitLabel.classList.add('label-error');
-	
+
 	body.appendChild(submitLabel);
 	submitLabel.addEventListener('click', () => {
 		body.removeChild(submitLabel);
 	});
 };
 
+const fetchUser = (tag, value) => {
+	let user = {};
+	fetch('users.xml')
+		.then(res => res.text())
+		.then(data => {
+			const domParser = new DOMParser();
+			const xmlDoc = domParser.parseFromString(data, "application/xml");
+			const fetchedUsers = xmlDoc.querySelectorAll('users user');
+			
+			fetchedUsers.forEach(usr => {
+				// console.log(usr);
+				const userEmail = 
+					usr.querySelector(tag)
+					.childNodes[0]
+					.nodeValue;
+				if(userEmail == value) {
+					console.log(usr.querySelector('name').childNodes[0].nodeValue);
+					user = Object.assign(user, {
+						name: usr.querySelector('name').childNodes[0].nodeValue,
+						email: usr.querySelector('email').childNodes[0].nodeValue
+					});
+				}
+			});
+		});
+		return user;
+}
+
 submitBtn.addEventListener('click', e => {
 	e.preventDefault();
+	const email = document.querySelector('#email');
+	const type = 'email';
 	if(formHasErrors(e.target.parentNode)) {
 		addSubmitMessage('You have errors on the input');
+	} else {
+		console.log(fetchUser(type, email.value));
 	}
 });
 

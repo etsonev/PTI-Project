@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 body {
 	font: 16px 'Quicksand', sans-serif;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 a {
@@ -10,42 +10,16 @@ a {
 	color: #000;
 }
 
-.submit-label {
-	position: absolute;
-	top: 40px;
-	left: 0;
-	text-align: center;
-	color: #fff;
-	width: 100%;
+.btn {
+	display: inline-block;
+	background: #42f45f;
 	padding: .5rem;
-	opacity: 0.7;
+	border-radius: 1rem;
+	opacity: 0.8;
 }
 
-.label-error {
-	background: #cc1a1a;
-}
-
-.landing-video {
-	position: absolute;
-	  top: 0;
-	  left: 0;
-	  min-width: 100%;
-	  min-height: 100%;
-	  width: auto;
-	  height: auto;
-	  z-index: -1;
-}
-
-video {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+.btn:hover {
+	opacity: 1;
 }
 
 /* Header Section */
@@ -68,56 +42,63 @@ header nav ul li {
 	margin-right: 20px;
 }
 
-header nav ul li:nth-child(2) {
-	margin-right: 0;
-}
+
 
 /* Main Section(Form) */
+
 main {
-	margin-top: 30px;
-	display: flex;
-	justify-content: center;
-	/*margin-top: 10rem;
-	padding-bottom: 30rem;*/
+    /*display: flex;
+    justify-content: center;*/
 }
 
-main .signin-box {
+main #hero-section {
+	background-image: url('../img/bg-img.jpeg');
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 100vh;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+main #hero-section #hero-text {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	color: #fff;
-	width: 300px;
-	text-align: center;
-	background: #000;
-	opacity: .5;
-}
-
-main .signin-box h2 {
-	font-weight: bold;
-	font-size: 18px;
+	line-height: 3rem;
+	border: 3px solid #42f45f;
 	padding: 1rem;
 }
 
-main .signin-box form {
-	padding: 2rem;
+main #hero-section #hero-text h1 {
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	letter-spacing: 0.050rem
 }
 
-main .signin-box form input[type="submit"] {
-	padding: .5rem;
-	font-size: 16px;
+main #hero-section #hero-text p {
+	font-size: 1.2rem;
 }
 
-main .signin-box form .inputBox {
-	margin-bottom: 1rem;
+main .activities {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 5rem;
+	text-align: center;
 }
 
-main .signin-box form .inputBox label {
-	display: block;
+main .activities .activity {
+	flex-basis: 0;
+	flex-grow: 1;
+	line-height: 2rem
 }
 
-main .signin-box form .inputBox input {
-	padding: .25rem;
+main .activities .activity .activity-description {
+	width: 70%;
+	margin-left: 5rem;
 }
 
 /* Footer Section */
@@ -131,4 +112,31 @@ footer {
 	left: 0;
 	/*margin-bottom: -75px;*/
 	width: 100%;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1520px) {
+	main #hero-section #hero-text {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.btn {
+		opacity: 1;
+	}
+
+	main .activities {
+		flex-direction: column;
+	}
+
+	main .activities .activity {
+		margin-top: 3rem;
+	}
+
+	main .activities .activity .activity-description {
+		margin-left: 6rem;
+		
+	}
 }
